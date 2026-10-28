@@ -1790,6 +1790,145 @@ html.preloader-active body {
   #market-app-showcase .hero__dot { animation: none; }
   #market-app-showcase .btn { transition: none; }
 }
+.download-app-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 20000;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  background: rgba(15, 23, 42, 0.32);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 180ms ease, visibility 180ms ease;
+}
+
+.download-app-backdrop.is-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.download-app-modal {
+  position: relative;
+  width: min(100%, 464px);
+  padding: 22px 20px 20px;
+  border: 1px solid #e5e7eb;
+  border-radius: 18px;
+  background: #fff;
+  color: #202735;
+  box-shadow: 0 24px 70px rgba(15, 23, 42, 0.24);
+  font-family: inherit;
+  transform: translateY(8px) scale(0.98);
+  transition: transform 180ms ease;
+}
+
+.download-app-backdrop.is-open .download-app-modal {
+  transform: translateY(0) scale(1);
+}
+
+.download-app-modal__close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  display: grid;
+  width: 30px;
+  height: 30px;
+  place-items: center;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: #737b89;
+  cursor: pointer;
+  font-size: 24px;
+  line-height: 1;
+}
+
+.download-app-modal__close:hover {
+  background: #f3f4f6;
+  color: #202735;
+}
+
+.download-app-modal__title {
+  margin: 0 38px 4px 0;
+  font-size: 16px;
+  font-weight: 650;
+  line-height: 1.4;
+}
+
+.download-app-modal__intro,
+.download-app-modal__note {
+  color: #737b89;
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.download-app-modal__intro {
+  margin: 0 0 16px;
+}
+
+.download-app-modal__steps {
+  display: grid;
+  gap: 12px;
+  margin: 0 0 16px;
+}
+
+.download-app-modal__step {
+  display: flex;
+  min-height: 66px;
+  align-items: center;
+  gap: 14px;
+  padding: 12px;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  color: #515967;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.download-app-modal__icon {
+  display: grid;
+  width: 40px;
+  height: 40px;
+  flex: 0 0 40px;
+  place-items: center;
+  border-radius: 50%;
+  background: #f3f4f6;
+  color: #202735;
+}
+
+.download-app-modal__icon svg {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.8;
+}
+
+.download-app-modal__note {
+  margin: 0;
+}
+
+@media (max-width: 480px) {
+  .download-app-backdrop {
+    padding: 16px;
+  }
+
+  .download-app-modal {
+    padding: 20px 16px 18px;
+    border-radius: 16px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .download-app-backdrop,
+  .download-app-modal {
+    transition: none;
+  }
+}
 </style>
 </head>
 <body>
@@ -1857,7 +1996,7 @@ html.preloader-active body {
  <li><a href=#faq>FAQ</a></li>
  </ul>
  <div class=nav-right>
- <a href=https://bullxmarkets.com/accounts/register/ class=nav-cta id=navCta>
+ <a href=https://bullxmarkets.com/accounts/register/ class=nav-cta id=navCta data-download-app>
   <svg viewBox="0 0 24 24" aria-hidden="true" style="width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;vertical-align:-1px;margin-right:8px"><path d="M12 3v12m0 0l-4.5-4.5M12 15l4.5-4.5M4 15v4a2 2 0 002 2h12a2 2 0 002-2v-4"/></svg>
   Download App
  </a>
@@ -1987,10 +2126,10 @@ html.preloader-active body {
     in One App
    </h2>
    <p class="hero__text">
-    Crypto, forex, gold and US stocks with live prices, take-profit and stop-loss, and up to 20× leverage. Practise with a $20,000 demo balance first.
+    Crypto, forex, gold and US stocks with live prices, take-profit and stop-loss, and up to 20× leverage.
    </p>
    <div class="hero__actions">
-    <a href="#products" class="btn btn--dark">
+    <a href="#products" class="btn btn--dark" data-download-app>
      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0l-4.5-4.5M12 15l4.5-4.5M4 15v4a2 2 0 002 2h12a2 2 0 002-2v-4"/></svg>
      Download App
     </a>
@@ -3418,6 +3557,73 @@ goTo(0, false);
 
     window.setTimeout(addActivity, 1800 + Math.random() * 1800);
   }
+</script>
+<div class="download-app-backdrop" id="downloadAppBackdrop" aria-hidden="true">
+ <section class="download-app-modal" role="dialog" aria-modal="true" aria-labelledby="downloadAppTitle" aria-describedby="downloadAppIntro downloadAppNote" tabindex="-1">
+  <button class="download-app-modal__close" id="downloadAppClose" type="button" aria-label="Close install instructions">&times;</button>
+  <h2 class="download-app-modal__title" id="downloadAppTitle">Install Bullxmarkets</h2>
+  <p class="download-app-modal__intro" id="downloadAppIntro">Add the app to your home screen. It opens full-screen, like a native app, with no app store needed.</p>
+  <div class="download-app-modal__steps">
+   <div class="download-app-modal__step">
+    <span class="download-app-modal__icon" aria-hidden="true">
+     <svg viewBox="0 0 24 24"><path d="M12 3v12m0 0l-4.5-4.5M12 15l4.5-4.5M4 15v4a2 2 0 002 2h12a2 2 0 002-2v-4"/></svg>
+    </span>
+    <span>Click the <strong>install</strong> icon at the right of the address bar (Chrome, Edge).</span>
+   </div>
+   <div class="download-app-modal__step">
+    <span class="download-app-modal__icon" aria-hidden="true">
+     <svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M12 8v8m-4-4h8"/></svg>
+    </span>
+    <span>In Safari on Mac: <strong>File → Add to Dock.</strong></span>
+   </div>
+  </div>
+  <p class="download-app-modal__note" id="downloadAppNote">Using another browser? Look for “Install” or “Add to Home screen” in its menu.</p>
+ </section>
+</div>
+<script>
+(() => {
+  const backdrop = document.getElementById('downloadAppBackdrop');
+  const dialog = backdrop?.querySelector('.download-app-modal');
+  const closeButton = document.getElementById('downloadAppClose');
+  if (!backdrop || !dialog || !closeButton) {
+    return;
+  }
+
+  let previouslyFocusedElement = null;
+  const openDialog = (event) => {
+    event.preventDefault();
+    previouslyFocusedElement = document.activeElement;
+    backdrop.classList.add('is-open');
+    backdrop.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+    closeButton.focus();
+  };
+  const closeDialog = () => {
+    if (!backdrop.classList.contains('is-open')) {
+      return;
+    }
+
+    backdrop.classList.remove('is-open');
+    backdrop.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+    previouslyFocusedElement?.focus();
+  };
+
+  document.querySelectorAll('[data-download-app]').forEach((button) => {
+    button.addEventListener('click', openDialog);
+  });
+  closeButton.addEventListener('click', closeDialog);
+  backdrop.addEventListener('click', (event) => {
+    if (event.target === backdrop) {
+      closeDialog();
+    }
+  });
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') {
+      closeDialog();
+    }
+  });
+})();
 </script>
 <noscript></noscript>
 </body>
