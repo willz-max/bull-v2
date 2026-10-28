@@ -1,0 +1,15 @@
+<svg width="180" height="40" viewBox="0 0 180 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bullxGradient" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#7DD3FC"/>
+      <stop offset="0.45" stop-color="#4DA6FF"/>
+      <stop offset="1" stop-color="#A78BFA"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="2" y="2" width="36" height="36" rx="10" fill="url(#bullxGradient)"/>
+  <path d="M13 11.5H21.4C25.6 11.5 28.5 13.8 28.5 17.6C28.5 20 27.2 22.1 25 23.2C27.6 24.4 29.2 26.9 29.2 30C29.2 34.3 25.7 36.5 21.2 36.5H13V11.5ZM18.2 16.1V21.4H21C23.3 21.4 24.7 20.4 24.7 18.6C24.7 16.9 23.3 16.1 21 16.1H18.2ZM18.2 25.8V31.9H21.4C24.2 31.9 25.8 30.5 25.8 28.3C25.8 26.2 24.1 25.8 21.4 25.8H18.2Z" fill="#F8FAFC"/>
+  <path d="M18.2 11.5H20.3L24.2 11.5L28.1 11.5V17.1H24.9C24.5 15.5 23.1 14.2 20.9 14.2H18.2V11.5Z" fill="#E0F2FE" fill-opacity="0.5"/>
+
+  <text x="52" y="26" fill="#EEF6FF" font-family="Segoe UI, Arial, sans-serif" font-size="23" font-weight="700" letter-spacing="0.2">Bullx</text>
+</svg>
