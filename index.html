@@ -3,6 +3,7 @@
 <head>
 <meta charset=utf-8>
 <meta name=viewport content="width=device-width, initial-scale=1.0">
+<link rel="manifest" href="manifest.json">
 <title>Bullxmarkets – Online Trading &amp; Investment Platform</title>
 <meta name=title content="Bullxmarkets – Online Trading &amp; Investment Platform">
 <meta name=description content="Where disciplined traders turn strategy into profit.">
@@ -1943,6 +1944,42 @@ html.preloader-active body {
     transition: none;
   }
 }
+
+.nav-cta,
+.nav-mobile-drawer .drawer-cta,
+a.btn-primary,
+#market-app-showcase .btn--dark {
+  border-color: #1F4E79 !important;
+  background: #1F4E79 !important;
+  background-image: none !important;
+  color: #ffffff !important;
+  box-shadow: 0 6px 18px rgba(11, 31, 58, 0.18) !important;
+}
+
+.nav-cta:hover,
+.nav-mobile-drawer .drawer-cta:hover,
+a.btn-primary:hover,
+#market-app-showcase .btn--dark:hover {
+  border-color: #183D61 !important;
+  background: #183D61 !important;
+  background-image: none !important;
+  color: #ffffff !important;
+  box-shadow: 0 8px 22px rgba(11, 31, 58, 0.28) !important;
+}
+
+#market-app-showcase .btn--link {
+  border: 1px solid #B7D0ED !important;
+  background: #E8F1FC !important;
+  color: #2477E8 !important;
+  box-shadow: none !important;
+}
+
+#market-app-showcase .btn--link:hover {
+  border-color: #8FB5E3 !important;
+  background: #DCEBFA !important;
+  color: #1F5F9F !important;
+  box-shadow: 0 4px 12px rgba(36, 119, 232, 0.12) !important;
+}
 </style>
 </head>
 <body>
@@ -3640,6 +3677,16 @@ goTo(0, false);
     }
   });
 })();
+
+
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('sw.js')
+      .then(reg => console.log('Service Worker registered successfully!', reg.scope))
+      .catch(err => console.error('Service Worker registration failed:', err));
+  });
+}
+
 </script>
 <noscript></noscript>
 </body>
