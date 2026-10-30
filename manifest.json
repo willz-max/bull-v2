@@ -1,0 +1,38 @@
+{
+  "name": "BullXMarkets",
+  "short_name": "BULLX",
+  "description": "A fully functional progressive web app example.",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#1559b0",
+  "orientation": "any",
+  "scope": "/",
+  
+  "icons": [
+    {
+      "src": "/assets/logo.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/assets/logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/assets/logo.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/assets/logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
