@@ -1052,10 +1052,11 @@
     .features-header .section-body {
       margin: 0 auto
     }
-
+    
+    /* changed */
     .features-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(4, 1fr);
       gap: 18px
     }
 
@@ -5912,6 +5913,267 @@
       justify-content: center
     }
   }
+
+  /* acp */
+  .acp-section {
+    background: var(--bg);
+    border-top: 1px solid var(--border);
+    position: relative;
+    overflow: hidden
+  }
+ 
+  .acp-section::before {
+    content: "";
+    position: absolute;
+    bottom: -200px;
+    left: -160px;
+    width: 520px;
+    height: 520px;
+    background: radial-gradient(circle, var(--accent-dim) 0%, transparent 70%);
+    pointer-events: none
+  }
+ 
+  .acp-inner {
+    display: grid;
+    grid-template-columns: 0.95fr 1.05fr;
+    gap: 64px;
+    align-items: center;
+    position: relative;
+    z-index: 1
+  }
+ 
+  .acp-content .section-title span {
+    background: linear-gradient(135deg, var(--accent), var(--violet));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent
+  }
+ 
+  .acp-lead {
+    color: var(--dim);
+    font-size: 1rem;
+    line-height: 1.78;
+    max-width: 560px;
+    margin-bottom: 16px
+  }
+ 
+  .acp-tagline {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 12px;
+    padding: 14px 20px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
+    border-radius: var(--radius);
+    font-family: var(--font-display);
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--white);
+    line-height: 1.5
+  }
+ 
+  .acp-tagline i {
+    color: var(--accent);
+    font-size: 1rem
+  }
+ 
+  .acp-image {
+    position: relative
+  }
+ 
+  .acp-img-container {
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    aspect-ratio: 1070 / 726;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    box-shadow: 0 24px 60px rgba(15, 57, 100, 0.18)
+  }
+ 
+  .acp-img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block
+  }
+ 
+  @media (max-width:860px) {
+    .acp-inner {
+      grid-template-columns: 1fr;
+      gap: 40px
+    }
+ 
+    .acp-content {
+      text-align: center
+    }
+ 
+    .acp-content .section-eyebrow {
+      justify-content: center
+    }
+ 
+    .acp-lead {
+      margin-left: auto;
+      margin-right: auto
+    }
+ 
+    .acp-image {
+      order: -1
+    }
+  }
+
+  /* added */
+  .pamm-section {
+    background: var(--surface);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    position: relative;
+    overflow: hidden
+  }
+ 
+  .pamm-section::before {
+    content: "";
+    position: absolute;
+    top: -180px;
+    right: -160px;
+    width: 520px;
+    height: 520px;
+    background: radial-gradient(circle, var(--accent-dim) 0%, transparent 70%);
+    pointer-events: none
+  }
+ 
+  .pamm-inner {
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 64px;
+    align-items: center;
+    position: relative;
+    z-index: 1
+  }
+ 
+  .pamm-content .section-title span {
+    background: linear-gradient(135deg, var(--accent), var(--violet));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent
+  }
+ 
+  .pamm-lead {
+    color: var(--dim);
+    font-size: 1rem;
+    line-height: 1.78;
+    max-width: 560px;
+    margin-bottom: 16px
+  }
+ 
+  .pamm-tagline {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 12px;
+    padding: 14px 20px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
+    border-radius: var(--radius);
+    font-family: var(--font-display);
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--white);
+    line-height: 1.5
+  }
+ 
+  .pamm-tagline i {
+    color: var(--accent)
+  }
+ 
+  .pamm-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px
+  }
+ 
+  .pamm-card {
+    padding: 24px 20px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    transition: border-color var(--trans), transform var(--trans)
+  }
+ 
+  .pamm-card:hover {
+    border-color: rgba(77, 166, 255, 0.3);
+    transform: translateY(-4px)
+  }
+ 
+  .pamm-card-icon {
+    width: 42px;
+    height: 42px;
+    display: grid;
+    place-items: center;
+    background: var(--accent-dim);
+    color: var(--accent);
+    border-radius: var(--radius-sm);
+    font-size: 1rem;
+    margin-bottom: 16px
+  }
+ 
+  .pamm-card:nth-child(2) .pamm-card-icon {
+    background: var(--violet-dim);
+    color: var(--violet)
+  }
+ 
+  .pamm-card:nth-child(3) .pamm-card-icon {
+    background: var(--teal-dim);
+    color: var(--teal)
+  }
+ 
+  .pamm-card:nth-child(4) .pamm-card-icon {
+    background: var(--gold-dim);
+    color: var(--gold)
+  }
+ 
+  .pamm-card-title {
+    font-size: 0.92rem;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: var(--white)
+  }
+ 
+  .pamm-card-desc {
+    font-size: 0.82rem;
+    color: var(--dim);
+    line-height: 1.6
+  }
+ 
+  @media (max-width:860px) {
+    .pamm-inner {
+      grid-template-columns: 1fr;
+      gap: 40px
+    }
+ 
+    .pamm-content {
+      text-align: center
+    }
+ 
+    .pamm-content .section-eyebrow {
+      justify-content: center
+    }
+ 
+    .pamm-lead {
+      margin-left: auto;
+      margin-right: auto
+    }
+  }
+ 
+  @media (max-width:520px) {
+    .pamm-cards {
+      grid-template-columns: 1fr
+    }
+  }
 </style>
 </head>
 
@@ -6117,7 +6379,7 @@
 
 
 
-
+<!-- changed -->
   <section id="market-app-showcase" aria-labelledby="marketAppTitle">
     <div class="hero__card">
       <div class="hero__content">
@@ -6132,7 +6394,7 @@
           in One App
         </h2>
         <p class="hero__text">
-          Crypto, forex, gold and US stocks with live prices, take-profit and stop-loss, and up to 20× leverage.
+          <!-- Crypto, forex, gold and US stocks with live prices, take-profit and stop-loss, and up to 20× leverage. -->
         </p>
         <div class="hero__actions">
           <a href="#products" class="btn btn--dark" data-download-app>
@@ -6175,7 +6437,7 @@
                   </svg></span>
               </div>
               <div class="ph-body">
-                <h3 class="ph-h">Welcome back, <b>Ella</b></h3>
+                <h3 class="ph-h">Welcome back, <b>Steve</b></h3>
                 <p class="ph-sub">Portfolio overview and recent activity</p>
                 <div class="ph-actions">
                   <span class="ph-btn ph-btn--blue"><svg viewBox="0 0 24 24">
@@ -6188,7 +6450,7 @@
                 </div>
                 <div class="ph-balance">
                   <small>TOTAL BALANCE</small>
-                  <strong>$1746.06</strong>
+                  <strong>$1,746,630.06</strong>
                   <em>&asymp; &#8383; 0.000013</em>
                   <span class="ph-eye"><svg viewBox="0 0 24 24">
                       <path
@@ -6247,7 +6509,7 @@
                   <path d="M12 3l2.7 5.6 6.1.8-4.5 4.2 1.1 6.1L12 16.8 6.6 19.7l1.1-6.1L3.2 9.4l6.1-.8z" />
                 </svg>
               </div>
-              <div class="cp-price"><strong>$347.73</strong><span class="cp-chip">+1.25% &middot; $4.29</span></div>
+              <div class="cp-price"><strong>$1,938,347.73</strong><span class="cp-chip">+1.25% &middot; $4.29</span></div>
               <div class="cp-chart">
                 <svg viewBox="0 0 268 200" aria-hidden="true">
                   <g stroke="#e5eaf1" stroke-width="1">
@@ -6290,13 +6552,13 @@
         <p class=section-body>One membership. Six powerful tools working together to give you an edge.</p>
       </div>
       <div class=features-grid>
-        <div class="feat-card reveal visible">
+        <!-- <div class="feat-card reveal visible">
           <div class=feat-icon><i class="fab fa-bitcoin"></i></div>
           <div class=feat-title>Crypto Signals</div>
           <div class=feat-desc>High-probability setups on BTC, ETH, and top altcoins — with clear entry, stop-loss &amp;
             take-profit levels. No guesswork, just precision.</div>
           <div class=feat-tag>Daily Signals →</div>
-        </div>
+        </div> -->
         <div class="feat-card reveal reveal-delay-1 visible">
           <div class=feat-icon><i class="fas fa-chart-bar"></i></div>
           <div class=feat-title>Stock &amp; Options Signals</div>
@@ -6318,16 +6580,16 @@
             trade. Build real market intuition over time.</div>
           <div class=feat-tag>Every Trading Day →</div>
         </div>
-        <div class="feat-card reveal reveal-delay-2 visible">
+        <!-- <div class="feat-card reveal reveal-delay-2 visible">
           <div class=feat-icon><i class="fas fa-users"></i></div>
           <div class=feat-title>Private Community</div>
           <div class=feat-desc>A focused Discord of serious traders sharing ideas, discussing setups, and holding each
             other accountable. Quality over quantity — always.</div>
           <div class=feat-tag>Private Discord →</div>
-        </div>
+        </div> -->
         <div class="feat-card reveal reveal-delay-3 visible">
           <div class=feat-icon><i class="fas fa-copy"></i></div>
-          <div class=feat-title>ASC  Trading Access</div>
+          <div class=feat-title>ASC Trading Access</div>
           <div class=feat-desc>Follow proven strategies in real time. See exactly how experienced traders size positions
             and manage risk — then execute with confidence.</div>
           <div class=feat-tag>Mirror Trades →</div>
@@ -6356,6 +6618,7 @@
       </div>
     </div>
   </section>
+  <!-- changed -->
   <section id=products class=products-section>
     <div class=container>
       <div class="products-header reveal visible">
@@ -6379,7 +6642,7 @@
           </div>
         </div>
         <div class="product-card reveal reveal-delay-1 visible">
-          <img src="assets/cryptocurrency.avif" alt="cryptocurrency" class="product-card-img"
+          <img src="assets/crypto-currency-v2.jpeg" alt="cryptocurrency" class="product-card-img"
             onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
           <div class=product-card-img-placeholder style=display:none></div>
           <div class=product-card-body>
@@ -6392,7 +6655,7 @@
           </div>
         </div>
         <div class="product-card reveal reveal-delay-2 visible">
-          <img src="assets/etf.avif" alt="etf" class="product-card-img"
+          <img src="assets/exchange-traded-fund-v2.jpeg" alt="etf" class="product-card-img"
             onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
           <div class=product-card-img-placeholder style=display:none></div>
           <div class=product-card-body>
@@ -6405,7 +6668,7 @@
           </div>
         </div>
         <div class="product-card reveal reveal-delay-1 visible">
-          <img src="assets/global_ft.avif" alt="Global Forex Trading" class="product-card-img"
+          <img src="assets/global-forex-trading-v2.jpeg" alt="Global Forex Trading" class="product-card-img"
             onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
           <div class=product-card-img-placeholder style=display:none></div>
           <div class=product-card-body>
@@ -6418,7 +6681,7 @@
           </div>
         </div>
         <div class="product-card reveal reveal-delay-2 visible">
-          <img src="assets/global_cdf.webp" alt="Global Stock CFDs" class="product-card-img"
+          <img src="assets/stocks-v2.jpeg" alt="Global Stock CFDs" class="product-card-img"
             onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
           <div class=product-card-img-placeholder style=display:none></div>
           <div class=product-card-body>
@@ -6431,7 +6694,7 @@
           </div>
         </div>
         <div class="product-card reveal reveal-delay-3 visible">
-          <img src="assets/commodities_cfds.jpg" alt="Commodities CFDs" class="product-card-img"
+          <img src="assets/commodities-v2.jpeg" alt="Commodities CFDs" class="product-card-img"
             onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
           <div class=product-card-img-placeholder style=display:none></div>
           <div class=product-card-body>
@@ -6446,6 +6709,7 @@
       </div>
     </div>
   </section>
+  <!-- changed -->
   <section id=how class=how-section>
     <div class=container>
       <div class="how-header reveal visible">
@@ -6465,17 +6729,18 @@
         </div>
         <div class="how-step reveal reveal-delay-2 visible">
           <div class=how-step-num>03</div>
-          <h3>Receive Signals</h3>
-          <p>Access market analysis, trading signals, and AI-powered insights to support your decisions.</p>
+          <h3>Fund your Account</h3>
+          <p>Deposit funds to instantly access premium trading signals, real-time market analysis, and AI-powered decision tools.</p>
         </div>
         <div class="how-step reveal reveal-delay-3 visible">
           <div class=how-step-num>04</div>
-          <h3>Execute &amp; Grow</h3>
+          <h3>Choose a Strategy and hop on it</h3>
           <p>Apply your strategy, monitor your performance, and manage your risk as you trade.</p>
         </div>
       </div>
     </div>
   </section>
+  <!-- changed -->
   <section id=trading-room class=trading-room-section>
     <div class=container>
       <div class="room-header-row reveal visible">
@@ -6722,7 +6987,7 @@
           </div>
         </div>
       </div>
-      <div class="elite-header-row reveal visible">
+      <!-- <div class="elite-header-row reveal visible">
         <div class=section-eyebrow style=justify-content:center>ASC Trading</div>
         <h2 class=section-title>Trade With <span
             style=background:linear-gradient(135deg,var(--accent),var(--violet));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text>Elite
@@ -6862,7 +7127,7 @@
             Copy Trader
           </a>
         </div>
-      </div>
+      </div> -->
     </div>
   </section>
   <section id=why class=why-section>
@@ -7325,11 +7590,7 @@
             <img src="assets/testimonial-main-2.jpeg">
           </div>
         </div>
-        <!-- <div class="screenshot-card reveal reveal-delay-2 visible">
-          <div class=screenshot-placeholder>
-            <img src="assets/testimonial-main-1.jpeg">
-          </div>
-        </div> -->
+    
       </div>
 
 
@@ -7455,6 +7716,88 @@
       shown are illustrative only. Copy trading does not guarantee profits and you may lose some or all of your
       capital.</p>
  
+  </div>
+</section>
+
+<!-- added -->
+ <section id="adapt-compound" class="acp-section">
+  <div class="container">
+    <div class="acp-inner">
+ 
+      <div class="acp-content reveal visible">
+        <div class="section-eyebrow">Adaptive Compounding Strategy</div>
+        <h2 class="section-title"><span>Adapt. Compound.</span><br>Progress.</h2>
+ 
+        <p class="acp-lead">
+          Our Adaptive Compounding Strategy (ASC) is designed around a disciplined approach to capital growth,
+          strategic market participation and continuous portfolio adaptation.
+        </p>
+        <p class="acp-lead">
+          By combining structured trading principles, market analysis and risk management, ASC aims to navigate
+          changing market conditions while pursuing sustainable long-term growth.
+        </p>
+ 
+        <div class="acp-tagline">
+          <i class="fas fa-chart-line"></i>
+          <span>A smarter perspective on strategic trading and compounding.</span>
+        </div>
+      </div>
+ 
+      <div class="acp-image reveal reveal-delay-2 visible">
+        <div class="acp-img-container">
+          <img src="assets/adaptive-compounding-v2.jpeg" alt="Upward growth chart representing adaptive compounding">
+        </div>
+      </div>
+ 
+    </div>
+  </div>
+</section>
+
+<!-- added -->
+<section id="pamm-investment" class="pamm-section">
+  <div class="container">
+    <div class="pamm-inner">
+ 
+      <div class="pamm-content reveal visible">
+        <div class="section-eyebrow">PAMM Investment</div>
+        <h2 class="section-title"><span>Invest Smarter.</span><br>Grow Together.</h2>
+ 
+        <p class="pamm-lead">
+          Our PAMM Investment solution provides investors with an opportunity to participate in professionally
+          managed trading strategies. Through a structured allocation system, investors can access trading
+          opportunities while experienced money managers manage the trading activity on their behalf.
+        </p>
+ 
+        <div class="pamm-tagline">
+          <i class="fas fa-globe"></i>
+          <span>Discover a more convenient approach to participating in the global financial markets.</span>
+        </div>
+      </div>
+ 
+      <div class="pamm-cards reveal reveal-delay-2 visible">
+        <div class="pamm-card">
+          <div class="pamm-card-icon"><i class="fas fa-user-shield"></i></div>
+          <div class="pamm-card-title">Professionally Managed</div>
+          <div class="pamm-card-desc">Access trading strategies run by experienced money managers.</div>
+        </div>
+        <div class="pamm-card">
+          <div class="pamm-card-icon"><i class="fas fa-scale-balanced"></i></div>
+          <div class="pamm-card-title">Structured Allocation</div>
+          <div class="pamm-card-desc">A clear allocation system for participating in trading opportunities.</div>
+        </div>
+        <div class="pamm-card">
+          <div class="pamm-card-icon"><i class="fas fa-users-line"></i></div>
+          <div class="pamm-card-title">Managed on Your Behalf</div>
+          <div class="pamm-card-desc">Managers handle the trading activity for investors.</div>
+        </div>
+        <div class="pamm-card">
+          <div class="pamm-card-icon"><i class="fas fa-globe"></i></div>
+          <div class="pamm-card-title">Global Markets</div>
+          <div class="pamm-card-desc">A more convenient way to take part in the global financial markets.</div>
+        </div>
+      </div>
+ 
+    </div>
   </div>
 </section>
 
