@@ -6833,6 +6833,258 @@
       grid-template-columns: 1fr
     }
   }
+  /* added */
+    .sectrust-section {
+    background: var(--bg);
+    border-top: 1px solid var(--border);
+    position: relative;
+    overflow: hidden
+  }
+ 
+  .sectrust-section::before {
+    content: "";
+    position: absolute;
+    top: -200px;
+    right: -160px;
+    width: 520px;
+    height: 520px;
+    background: radial-gradient(circle, var(--accent-dim) 0%, transparent 70%);
+    pointer-events: none
+  }
+ 
+  .sectrust-inner {
+    position: relative;
+    z-index: 1
+  }
+ 
+  .sectrust-head {
+    max-width: 680px;
+    margin-bottom: 48px
+  }
+ 
+  .sectrust-head .section-title span {
+    background: linear-gradient(135deg, var(--accent), var(--violet));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent
+  }
+ 
+  .sectrust-lead {
+    color: var(--dim);
+    font-size: 1rem;
+    line-height: 1.78
+  }
+ 
+  /* 1px gaps over a border-coloured background draw the dividers */
+  .sectrust-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    overflow: hidden
+  }
+ 
+  .sectrust-item {
+    padding: 36px 32px;
+    background: var(--surface);
+    transition: background var(--trans)
+  }
+ 
+  .sectrust-item:hover {
+    background: var(--bg)
+  }
+ 
+  .sectrust-icon {
+    width: 48px;
+    height: 48px;
+    display: grid;
+    place-items: center;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    color: var(--accent);
+    font-size: 1.05rem;
+    margin-bottom: 24px;
+    transition: background var(--trans), color var(--trans)
+  }
+ 
+  .sectrust-item:hover .sectrust-icon {
+    background: var(--accent-dim)
+  }
+ 
+  .sectrust-title {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--white)
+  }
+ 
+  .sectrust-desc {
+    font-size: 0.88rem;
+    color: var(--dim);
+    line-height: 1.7
+  }
+ 
+  @media (max-width:960px) {
+    .sectrust-grid {
+      grid-template-columns: 1fr 1fr
+    }
+  }
+ 
+  @media (max-width:600px) {
+    .sectrust-grid {
+      grid-template-columns: 1fr
+    }
+ 
+    .sectrust-item {
+      padding: 28px 24px
+    }
+  }
+
+  /* added */
+  .adv-section {
+    background: var(--surface);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    position: relative;
+    overflow: hidden
+  }
+ 
+  .adv-section::before {
+    content: "";
+    position: absolute;
+    top: -200px;
+    left: -160px;
+    width: 520px;
+    height: 520px;
+    background: radial-gradient(circle, var(--accent-dim) 0%, transparent 70%);
+    pointer-events: none
+  }
+ 
+  .adv-inner {
+    display: grid;
+    grid-template-columns: 0.8fr 1.5fr;
+    gap: 64px;
+    align-items: start;
+    position: relative;
+    z-index: 1
+  }
+ 
+  .adv-head .section-title span {
+    background: linear-gradient(135deg, var(--accent), var(--violet));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent
+  }
+ 
+  .adv-lead {
+    color: var(--dim);
+    font-size: 1.05rem;
+    line-height: 1.78;
+    max-width: 380px
+  }
+ 
+  .adv-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr
+  }
+ 
+  .adv-item {
+    display: flex;
+    gap: 20px;
+    padding: 36px 32px
+  }
+ 
+  .adv-item:nth-child(odd) {
+    border-right: 1px solid var(--border)
+  }
+ 
+  .adv-item:nth-child(-n+2) {
+    border-bottom: 1px solid var(--border)
+  }
+ 
+  .adv-icon {
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent), var(--violet));
+    color: #fff;
+    font-size: 1rem;
+    transition: transform var(--trans)
+  }
+ 
+  .adv-item:hover .adv-icon {
+    transform: scale(1.1)
+  }
+ 
+  .adv-title {
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--white)
+  }
+ 
+  .adv-desc {
+    font-size: 0.9rem;
+    color: var(--dim);
+    line-height: 1.7;
+    margin-bottom: 24px
+  }
+ 
+  .adv-btn {
+    display: inline-block;
+    padding: 12px 22px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--white);
+    text-decoration: none;
+    transition: background var(--trans), border-color var(--trans), color var(--trans)
+  }
+ 
+  .adv-btn:hover {
+    background: var(--accent-dim);
+    border-color: rgba(77, 166, 255, 0.3);
+    color: var(--accent)
+  }
+ 
+  @media (max-width:960px) {
+    .adv-inner {
+      grid-template-columns: 1fr;
+      gap: 40px
+    }
+ 
+    .adv-lead {
+      max-width: 560px
+    }
+  }
+ 
+  @media (max-width:640px) {
+    .adv-grid {
+      grid-template-columns: 1fr
+    }
+ 
+    .adv-item {
+      padding: 28px 0
+    }
+ 
+    .adv-item:nth-child(odd) {
+      border-right: 0
+    }
+ 
+    .adv-item:not(:last-child) {
+      border-bottom: 1px solid var(--border)
+    }
+  }
 </style>
 </head>
 
@@ -7540,6 +7792,63 @@
       </div>
     </div>
   </section>
+  <!-- added -->
+   <section id="advantages" class="adv-section">
+  <div class="container">
+    <div class="adv-inner">
+ 
+      <div class="adv-head reveal visible">
+        <h2 class="section-title"><span>Advantages</span></h2>
+        <p class="adv-lead">We listen to our traders and work with them to keep improving the platform.</p>
+      </div>
+ 
+      <div class="adv-grid reveal reveal-delay-2 visible">
+ 
+        <div class="adv-item">
+          <div class="adv-icon"><i class="fas fa-bolt"></i></div>
+          <div>
+            <div class="adv-title">Smooth Start</div>
+            <div class="adv-desc">Open an account in minutes, deposit crypto and start trading — deposits are
+              credited automatically.</div>
+            <a href="#pricing" class="adv-btn">Open an Account</a>
+          </div>
+        </div>
+ 
+        <div class="adv-item">
+          <div class="adv-icon"><i class="fas fa-chart-line"></i></div>
+          <div>
+            <div class="adv-title">Adaptive Compounding</div>
+            <div class="adv-desc">Our ACS strategy combines structured trading, market analysis and risk
+              management to pursue sustainable long-term growth.</div>
+            <a href="#adapt-compound" class="adv-btn">Discover ACS</a>
+          </div>
+        </div>
+ 
+        <div class="adv-item">
+          <div class="adv-icon"><i class="fas fa-scale-balanced"></i></div>
+          <div>
+            <div class="adv-title">Low Commissions</div>
+            <div class="adv-desc">A flat 0.05% fee per trade, shown before you confirm. No hidden charges.</div>
+            <a href="#global-forex" class="adv-btn">Explore Markets</a>
+          </div>
+        </div>
+ 
+        <div class="adv-item">
+          <div class="adv-icon"><i class="fas fa-globe"></i></div>
+          <div>
+            <div class="adv-title">Multiple Markets</div>
+            <div class="adv-desc">Access forex, global stock CFDs, cryptocurrencies and commodities, all in one
+              place.</div>
+            <a href="#pricing" class="adv-btn">Start Now</a>
+          </div>
+        </div>
+ 
+      </div>
+ 
+    </div>
+  </div>
+</section>
+ 
   <!-- changed -->
   <section id=trading-room class=trading-room-section>
     <div class=container>
@@ -8839,6 +9148,69 @@
       </div>
     </div>
   </section>
+  <!-- added -->
+   <section id="security" class="sectrust-section">
+  <div class="container">
+    <div class="sectrust-inner">
+ 
+      <div class="sectrust-head reveal visible">
+        <div class="section-eyebrow">Security &amp; Transparency</div>
+        <h2 class="section-title">Built to be <span>checked</span>, not just trusted</h2>
+        <p class="sectrust-lead">
+          How we protect your account and your money — each point below is a feature you can see and verify inside
+          the app.
+        </p>
+      </div>
+ 
+      <div class="sectrust-grid reveal reveal-delay-2 visible">
+ 
+        <div class="sectrust-item">
+          <div class="sectrust-icon"><i class="fas fa-lock"></i></div>
+          <div class="sectrust-title">Encrypted at rest</div>
+          <div class="sectrust-desc">Exchange API keys and 2FA secrets are stored with AES-256-GCM and never sent back
+            to your browser.</div>
+        </div>
+ 
+        <div class="sectrust-item">
+          <div class="sectrust-icon"><i class="fas fa-shield-halved"></i></div>
+          <div class="sectrust-title">Two-factor everywhere it matters</div>
+          <div class="sectrust-desc">Authenticator codes protect sign-in, withdrawals and connecting a real-money
+            exchange account.</div>
+        </div>
+ 
+        <div class="sectrust-item">
+          <div class="sectrust-icon"><i class="fas fa-user-shield"></i></div>
+          <div class="sectrust-title">Identity verification</div>
+          <div class="sectrust-desc">Withdrawals unlock only after email, profile, KYC and 2FA checks — the same rules
+            for every customer.</div>
+        </div>
+ 
+        <div class="sectrust-item">
+          <div class="sectrust-icon"><i class="fas fa-landmark"></i></div>
+          <div class="sectrust-title">Your funds, your control</div>
+          <div class="sectrust-desc">Trading runs through your own exchange account, so your funds stay with you and you
+            can disconnect access at any time.</div>
+        </div>
+ 
+        <div class="sectrust-item">
+          <div class="sectrust-icon"><i class="fas fa-bolt"></i></div>
+          <div class="sectrust-title">Protection that keeps running</div>
+          <div class="sectrust-desc">Take-profit and stop-loss orders on live accounts sit on the exchange itself, and
+            a kill switch flattens everything in one tap.</div>
+        </div>
+ 
+        <div class="sectrust-item">
+          <div class="sectrust-icon"><i class="fas fa-scale-balanced"></i></div>
+          <div class="sectrust-title">Transparent pricing</div>
+          <div class="sectrust-desc">A flat trading fee shown before you confirm, published bot backtests and plan
+            terms — no hidden charges.</div>
+        </div>
+ 
+      </div>
+ 
+    </div>
+  </div>
+</section>
   <!-- Change -->
   <section id=testimonials class=testimonials-section>
     <div class=container>
